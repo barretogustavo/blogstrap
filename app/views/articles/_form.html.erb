@@ -1,30 +1,11 @@
-<%= form_with model: article do |form| %>
-  <div>
-    <%= form.label :title %>
-    <br>
-    <%= form.text_field :title %>
-    <% article.errors.full_messages_for(:title).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-    <br><br>
-  </div>
+<%= simple_form_for article do |form| %>
+  <%= form.input :title %>
+  <br>
+  <%= form.input :body, input_html: { rows: 10 } %>
+  <br>
 
-  <div>
-    <%= form.label :body %>
-    <br>
-    <%= form.text_area :body %>
-    <% article.errors.full_messages_for(:body).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
-    <br>
-    <%= form.submit %>
-    <ul>
-      <li>
-        <%= link_to 'Voltar', articles_path%>
-      </li>
-    </ul>
-  </div>
+  <p>
+    <%= form.button :submit, class: 'btn btn-primary' %>
+    <%= link_to 'Back', articles_path, class: 'btn btn-secondary' %>
+  </p>
 <% end %>
