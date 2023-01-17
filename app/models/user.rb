@@ -1,4 +1,6 @@
 class User < ApplicationRecord # rubocop:disable Style/Documentation
+  has_many :articles, dependent: :destroy
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
