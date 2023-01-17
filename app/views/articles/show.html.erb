@@ -1,20 +1,25 @@
 <article class="blog-post">
   <h2 class="blog-post-title"><%= @article.title%></h2>
+
   <p class="blog-post-meta">
     <%= date_formatter(@article.created_at) %> by 
-    <a href="#">Chris</a>
+    <%= @article.user.email %>
   </p>
+
   <p style="white-space: pre-line;">
     <%= @article.body %>
   </p>
+
   <%= link_to 'Edit', 
     edit_article_path(@article), 
     class: 'btn btn-secondary btn-sm' 
   %>
+
   <%= link_to 'Back', 
       articles_path, 
       class: 'btn btn-secondary btn-sm' 
   %>
+
   <%= link_to 'Delete', 
     article_path(@article),
     class: 'btn btn-danger btn-sm',
