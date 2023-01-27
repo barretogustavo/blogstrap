@@ -45,13 +45,14 @@ class ArticlesController < ApplicationController
     redirect_to root_path, notice: 'Article was successfully deleted.'
   end
 
-  private 
-  
+  private
+
   def article_params
     params.require(:article).permit(:title, :body, :category_id)
   end
 
   def set_article
     @article = Article.find(params[:id])
+    authorize @article
   end
 end

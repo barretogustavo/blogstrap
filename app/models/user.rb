@@ -1,4 +1,5 @@
 class User < ApplicationRecord # rubocop:disable Style/Documentation
+  rolify
   has_many :articles, dependent: :destroy
 
   # Include default devise modules. Others available are:
