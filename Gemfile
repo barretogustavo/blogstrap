@@ -49,11 +49,15 @@ end
 
 group :development do
   gem 'rubocop'
+
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
   # https://github.com/ryanb/letter_opener 
   gem "letter_opener", "~> 1.8"
+
+  # https://github.com/flyerhzm/bullet
+  gem "bullet"
 
 end
 
