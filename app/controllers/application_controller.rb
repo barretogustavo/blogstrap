@@ -10,4 +10,14 @@ class ApplicationController < ActionController::Base
     redirect_back(fallback_location: root_path)
   end
 
+  protected
+
+  def authenticate_user!
+    if user_signed_in?
+      super
+    else
+      redirect_to user_session_path, :alert => 'You need to sign in or sign up before continuing.'
+    end
+  end
+
 end
