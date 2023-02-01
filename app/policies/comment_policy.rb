@@ -4,6 +4,7 @@ class CommentPolicy < ApplicationPolicy
   end
 
   def destroy?
-    user&.id == record.user.id
+    article = record.article
+    user&.id == record.user.id || (article && user&.id == article.user.id)
   end
 end
