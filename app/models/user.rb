@@ -12,4 +12,12 @@ class User < ApplicationRecord # rubocop:disable Style/Documentation
          :rememberable,
          :trackable,
          :validatable
+
+  private
+
+  def password_complexity
+    return if password.nil?
+
+    errors.add :password, :complexity unless CheckPasswordComplexityService.call(password)
+  end
 end
