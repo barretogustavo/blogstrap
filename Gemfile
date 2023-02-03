@@ -81,3 +81,4 @@ gem "groupdate"
 
 # postgres
 gem 'pg', '~> 1.4', '>= 1.4.5', group: :production
+gem "dockerfile-rails", ">= 1.0.0", :group => :development
