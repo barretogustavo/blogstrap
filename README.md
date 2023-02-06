@@ -1,24 +1,81 @@
-# README
+# Gustavo's Blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Building a blog using Bootstrap 5 with Ruby on Rails 6 in MVC pattern.
 
-Things you may want to cover:
+<table>
+  <tr>
+    <td>Ruby version</td>
+    <td>
+      3.2.0
+    </td>
+  </tr>
+  <tr>
+    <td>Rails version</td>
+    <td>
+      7.0.4
+    </td>
+  </tr>
+  <tr>
+    <td>Database</td>
+    <td>
+      SQLite3 (dev) / PostgreSQL (prod)
+    </td>
+  </tr>
+</table>
 
-* Ruby version
+## Initial settings to run the project
 
-* System dependencies
+```bash
+# clone the project
+git clone https://github.com/barretogustavo/blogstrap.git
+# enter the cloned directory
+cd blogstrap
+# install Ruby on Rails dependencies
+bundle install
+# install Node dependencies
+yarn install
+# create the development and test databases
+rails db:create
+# create the tables
+rails db:migrate
+# run the project
+rails s
+```
 
-* Configuration
+Open the browser at the address `http://localhost:3000`
 
-* Database creation
+## Configuration for Production
 
-* Database initialization
+```bash
+# delete the config/credentials.yml.enc file
+rm config/credentials.yml.enc
+# run the command to create credentials and master key (replace 'code' if you don't use VS Code)
+EDITOR="code --wait" bin/rails credentials:edit
+```
 
-* How to run the test suite
+Add the information below in the [credentials](https://guides.rubyonrails.org/security.html#custom-credentials) to configure the email used by the Devise
+gem (replace with the values you want):
 
-* Services (job queues, cache servers, search engines, etc.)
+```yml
+# ... your content above
+# GMail
+gmail:
+  mailer_sender: 'Sender <your@email.com>'
+  user_name: your@email.com
+  password: your_password
+# or Zoho
+zoho:
+  mailer_sender: 'Sender <your@email.com>'
+  user_name: your@email.com
+  password: your_password
+  domain: your_domain.com.br
+exception_recipients: exceptions@example.com
+```
 
-* Deployment instructions
+Save and close the `config/credentials.yml.enc` file.
 
-* ...
+If you want to use another email provider, change it in the file
+`config/environments/production.rb`.
+
+To configure [Exception Notification](https://github.com/smartinez87/exception_notification), change it in the file
+`config/initializers/exception_notification.rb`.
