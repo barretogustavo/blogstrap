@@ -13,7 +13,7 @@
   <div class="col-4 pt-1">
     <%= link_to t('app.menu.categories'), 
             categories_path, 
-            class: 'link-secondary' if policy(:category).index?
+            class: 'btn btn-secondary' if policy(:category).index?
         %>
   </div>
 

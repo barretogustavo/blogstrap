@@ -1,7 +1,11 @@
 class ArticlePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      if user&.admin? || user&.has_role(:moderator)
+        scope.all
+      else
+        raise Pundit::NotAuthorizedError
+      end
     end
   end
 
@@ -10,7 +14,7 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def create?
-    user&.id
+    user&.admin || user&.has_role?(:moderator)
   end
 
   def update?

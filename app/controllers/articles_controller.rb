@@ -35,10 +35,12 @@ class ArticlesController < ApplicationController
 
   def new
     @article = current_user.articles.new
+    authorize @article
   end
 
   def create
     @article = current_user.articles.new(article_params)
+    authorize @article
 
     if @article.save
       redirect_to @article,  notice: t('.success')
