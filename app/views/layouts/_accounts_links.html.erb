@@ -5,11 +5,11 @@
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
       <li>
-        <%= link_to 'Edit user', edit_user_registration_path, class: 'dropdown-item' %>
+        <%= link_to t('app.menu.edit_user'), edit_user_registration_path, class: 'dropdown-item' %>
       </li>
       <li><hr class="dropdown-divider"></li>
       <li>
-        <%= link_to 'Sign out', 
+        <%= link_to t('app.menu.sign_out'), 
             destroy_user_session_path, 
             data: { 
                 turbo_method: :delete,
@@ -20,6 +20,6 @@
     </ul>
   </div>
 <% else %>
-  <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-outline-primary me-2' %>&nbsp;&nbsp;
-  <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary' %>
+  <%= link_to t('app.menu.sign_in'), new_user_session_path, class: 'btn btn-outline-primary me-2' %>&nbsp;&nbsp;
+  <%= link_to t('app.menu.sign_up'), new_user_registration_path, class: 'btn btn-primary' %>
 <% end %>
