@@ -5,9 +5,9 @@
     <%= render 'article_detail', article: @article %>
   </p>
 
-  <p style="white-space: pre-line;">
-    <%= @article.body %>
-  </p>
+  <div>
+    <%= raw @article.body %>
+  </div>
 
   <%= link_to t('app.button.edit'), 
     edit_article_path(@article), 

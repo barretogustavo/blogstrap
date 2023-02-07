@@ -9,7 +9,10 @@
         <%= render 'article_detail', article: article %>
 
       </div>
-      <p class="card-text mb-auto"><%= truncate(article.body, length: 100) %></p>
+      <p class="lead my-3">
+        <% @article_body = truncate(article.body, length: 100, :escape => false) %>
+        <%= strip_tags(@article_body) %>
+      </p>
       <%= link_to t('articles.continue_reading'), 
           article, 
           class: 'stretched-link' 

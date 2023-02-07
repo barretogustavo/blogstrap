@@ -21,8 +21,10 @@ Sou engenheiro de software e criador de conteúdo (ig: @gustavobarreto.dev)'
       success: Artigo foi excluído com sucesso.
     form:
       choose_category: Escolha uma Categoria
+      body: "Conteúdo:"
     show:
       comments: Comentários
       add_comment: "Adicione um comentário:"
       empty: Ainda não há comentários.
       login_create_comment: Por favor, faça o login para criar um comentário.
+      text_editor_bug: Caso o editor de texto não apareça, recarregue a página, por favor! Estou trabalhando para corrigir esse bug.

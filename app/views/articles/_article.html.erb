@@ -3,13 +3,15 @@
   <p class="blog-post-meta">
     <%= render 'article_detail', article: article %>
   </p>
-  <p><%= truncate(article.body, length: 150) %></p>
+  <p class="lead my-3">
+    <% @article_body = truncate(article.body, length: 150, :escape => false) %>
+    <%= strip_tags(@article_body) %>
+  </p>
   <p><%= link_to t('articles.continue_reading'), 
   article, class: 'btn btn-link' %></p>
   <%= link_to t('app.button.edit'), 
     edit_article_path(article), 
     class: 'btn btn-secondary btn-sm' if policy(article).update?
-
   %>
   <%= link_to t('app.button.destroy'), 
     article_path(article),

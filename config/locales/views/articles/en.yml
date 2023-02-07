@@ -24,8 +24,10 @@ Helping over 17000 people study programming through Instagram and Discord."
       success: Article was successfully destroyed.
     form:
       choose_category: Choose a Category
+      body: "Body:"
     show:
       comments: Comments
       add_comment: "Add a comment:"
       login_create_comment: Please, login to create a comment.
       empty: No comments yet.
+      text_editor_bug: Sometimes you will have to reload the page to show the text editor.
