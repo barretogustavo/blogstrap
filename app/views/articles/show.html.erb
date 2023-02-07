@@ -1,3 +1,21 @@
+<!-- Ads show-article -->
+<script 
+  async 
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5794959318667913"
+  crossorigin="anonymous"></script>
+<ins
+    class="adsbygoogle"
+    style="display:block; text-align:center; margin: 1rem 0;"
+    data-ad-layout="in-article"
+    data-ad-format="fluid"
+    data-ad-client="ca-pub-5794959318667913"
+    data-ad-slot="6716769782"
+  >
+</ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 <article class="blog-post">
   <h2 class="blog-post-title"><%= @article.title%></h2>
 
@@ -28,6 +46,24 @@
     class: 'btn btn-danger btn-sm' if policy(@article).destroy?
   %>
 
+  <!-- Ads show-article-footer -->
+  <script 
+    async 
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5794959318667913"
+    crossorigin="anonymous"
+  ></script>
+  <ins 
+    class="adsbygoogle"
+    style="display:block; text-align:center; margin: 1rem 0;"
+    data-ad-layout="in-article"
+    data-ad-format="fluid"
+    data-ad-client="ca-pub-5794959318667913"
+    data-ad-slot="3326806223"
+  ></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
   <h2 class="mt-3"><%= t('.comments') %></h2>
   <% if @article.comments.present? %>
     <%= render @article.comments %>
@@ -44,5 +80,4 @@
     <%= link_to 'sign-up', new_user_registration_path%>
     to create a comment.
   <% end%>
-
 </article>
