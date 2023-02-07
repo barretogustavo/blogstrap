@@ -10,7 +10,7 @@ namespace :fly do
   #  - changes to the filesystem made here are DISCARDED
   #  - full access to secrets, databases
   #  - failures here prevent deployment
-  task :release
+  task :release => 'db:prepare'
 
   # SERVER step:
   #  - changes to the filesystem made here are deployed
