@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'ads.txt', to: 'ads#show'
+
   scope '(:locale)', locale: /pt-BR|en/ do 
     devise_for :users
     root 'articles#index'
