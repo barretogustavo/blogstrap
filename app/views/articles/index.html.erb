@@ -15,6 +15,7 @@
           class: 'btn btn-success' if policy(:article).create?
       %>
     </p>
+    <div style="margin-bottom: 2rem;"><%= link_to 'Tabnews', "/tabnews", class: "btn btn-primary" %></div>
     <%= render @articles  %>
     <%= render 'pagination' %>
   </div>

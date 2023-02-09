@@ -1,0 +1,11 @@
+<article class="blog-post">
+  <h2 class="blog-post-title"><%= @tab_news['title'] %></h2>
+
+  <p class="blog-post-meta">
+    <%= render 'tab_news_detail', tab_news: @tab_news %>
+  </p>
+
+  <div>
+    <%= simple_format @tab_news['body'] %>
+  </div>
+</article>

@@ -1,0 +1,8 @@
+<article class="blog-post">
+  <h3><%= tab_news['title']%></h3>
+  <p class="blog-post-meta">
+    <%= render 'tab_news_detail', tab_news: tab_news %>
+  </p>
+  <%= link_to 'Ler este Tabnews...', "/tabnews/#{tab_news['slug']}" %>
+  <hr>
+</article>
